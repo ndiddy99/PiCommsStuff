@@ -9,9 +9,9 @@ import com.pi4j.io.serial.SerialPort;
 public class PiRioSerial {
 	int baudrate;
 	final Serial serial;
-
+	ProtocolHandler handler;
 	public PiRioSerial() throws Exception {
-		ProtocolHandler handler=new ProtocolHandler();
+		handler=new ProtocolHandler();
 		this.baudrate=38400; 
 		serial = SerialFactory.createInstance();
 		serial.open(SerialPort.getDefaultPort(), baudrate);
@@ -27,6 +27,9 @@ public class PiRioSerial {
 	}
 	public void writeString(String stringToWrite) throws Exception {
 		serial.write(stringToWrite);
+	}
+	public ProtocolHandler getHandler() {
+		return handler;
 	}
 	
 }
