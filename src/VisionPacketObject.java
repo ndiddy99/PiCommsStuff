@@ -1,12 +1,19 @@
 
 public class VisionPacketObject {
 	String name;
-	double value;
-	public VisionPacketObject(String name, double value) {
-		this.name=name;
-		this.value=value;
+	int value;
+
+	public VisionPacketObject(String name, int value) {
+		this.name = name;
+		this.value = value;
 	}
+
 	public String outputPacket() {
-		return name+":"+value;
+		return name + ":" + value + "!";
+	}
+
+	@Override
+	public String toString() {
+		return "Name: " + name + " Value: " + value;
 	}
 }
