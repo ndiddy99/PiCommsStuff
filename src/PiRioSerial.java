@@ -18,7 +18,7 @@ public class PiRioSerial {
         serial.addListener(new SerialDataEventListener() {
             public void dataReceived(SerialDataEvent event) {
                     try {
-						handler.append(event.getAsciiString());
+						handler.addToBuffer(event.getAsciiString());
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

@@ -14,7 +14,7 @@ public class ProtocolHandler {
 	 *  the numbers are the values stored by the values
 	 *  the exclamation points separate values
 	 */
-	public void append(String stringToAppend) {
+	public void addToBuffer(String stringToAppend) {
 		for (int i=0; i < stringToAppend.length();i++) {
 			char charToAppend=stringToAppend.charAt(i);
 			if (charToAppend=='<') {  //is current character opening character?
